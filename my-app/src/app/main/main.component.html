@@ -1,0 +1,50 @@
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label for="user-id">User ID:</label>
+      <input [(ngModel)]="log.user_id" type="text" class="form-control" id="user_id" required name="user_id">
+    </div>
+
+    <div class="form-group">
+      <label for="intensity">
+        Pain Scale: {{log.intensity ? log.intensity : 5}}
+      </label>
+      <input class="form-control" type="range" [(ngModel)]="log.intensity" name="intensity" min="0" max="10">
+    </div>
+
+    <div class="form-group">
+      <label>Symptoms</label>
+      <select multiple class="form-control" [(ngModel)]="log.symptoms" name="symptoms">
+        <option *ngFor="let option of optionalSymptoms">{{option}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label> Other (List as many as needed)</label>
+      <input type="text" class="form-control" [(ngModel)]="log.other" name="other">
+    </div>
+
+    <hr>
+
+    <div style="text-align:center">
+        <img src="https://media.giphy.com/media/3ohhwpj6cdpUzUpaoM/giphy.gif">            
+    </div>
+
+    <div class="form-group">
+      <label for="intensity">
+        Please get a ball and squeeze it as shown above. Rate the difficulty below.
+        <br>
+        Difficulty: {{log.workout1 ? log.workout1 : 5}}
+      </label>
+      <input class="form-control" type="range" [(ngModel)]="log.workout1" name="workout1" min="0" max="10">
+    </div>
+
+
+    <div class="button-group">
+      <button type="submit" class="btn btn-success" (click)="sendData()">Submit</button>
+    </div>
+
+  </form>
+
+
+</div>

@@ -1,0 +1,17 @@
+<div class="container">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>UserID</th>
+        <th>Symptom</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let symptom of symptoms">
+        <td>{{symptom | json}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
